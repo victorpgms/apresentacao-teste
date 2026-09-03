@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f4ff" />
+    <meta name="description" content="Apresentação interativa do ConectaTravel — viagens e seguro viagem." />
+    <title>ConectaTravel — Apresentação Interativa</title>
+    <script>document.documentElement.classList.add("js")</script>
+    <link rel="icon" href="assets/conecta-logo.webp" type="image/webp" />
+    <link rel="preload" href="assets/conecta-logo.webp" as="image" fetchpriority="high" />
+    <link rel="preload" href="assets/brand-bg.webp" as="image" fetchpriority="high" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .hero > .hero-plane {
+        opacity: 0.22;
+        filter: brightness(1.28) saturate(0.72);
+      }
+
+      @media (min-width: 851px) {
+        html {
+          scroll-snap-type: y mandatory;
+        }
+
+        .slide {
+          scroll-snap-stop: always;
+        }
+
+        .team-slide {
+          align-items: start;
+        }
+
+        .team-profile {
+          min-height: clamp(24rem, 52svh, 35rem);
+        }
+
+        .demo-layout {
+          grid-template-columns: minmax(24rem, 0.85fr) minmax(0, 1.15fr);
+          gap: clamp(2rem, 4vw, 4.5rem);
+        }
+
+        .demo-heading {
+          min-width: 0;
+          max-width: 100%;
+          padding-right: 0.5rem;
+        }
+
+        .demo-heading h2 {
+          max-width: 100%;
+          font-size: clamp(3rem, 4.3vw, 5rem);
+        }
+
+        .demo-copy {
+          max-width: 25rem;
+        }
+
+        .demo-gallery {
+          min-width: 0;
+        }
+      }
+    </style>
+  </head>
+  <body data-application-url="" data-github-url="https://github.com/victorpgms">
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M6.5 8.2V18M6.5 5.3v.1M10.8 18v-5.4c0-2.7 3.7-3 3.7 0V18M10.8 8.2V18M3.8 3.8h16.4v16.4H3.8z" /></symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24"><path d="M9 18.8c-4 .9-4-2-5.5-2.4M14.5 21v-3.2c0-.9.3-1.7.9-2.2 3-.3 6.1-1.5 6.1-6.7 0-1.5-.5-2.7-1.4-3.7.2-1 .1-2.4-.4-3.2 0 0-1.2-.4-3.9 1.4a13.4 13.4 0 0 0-7 0C6.1 1.6 5 2 5 2c-.6.8-.7 2.2-.4 3.2a5.2 5.2 0 0 0-1.4 3.7c0 5.2 3.1 6.4 6.1 6.7.5.4.8 1.2.8 2.2V21" /></symbol>
+      <symbol id="icon-expand" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" /></symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19" /></symbol>
+      <symbol id="icon-arrow-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7" /></symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" /></symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="M12 7v5l3.5 2" /></symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.7 2.6 8.1 7 10 4.4-1.9 7-5.3 7-10V6l-7-3Z" /><path d="m9 12 2 2 4-4" /></symbol>
+      <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M4 5.5h16v11H9l-5 4v-15Z" /><path d="M8 10h8M8 13h5" /></symbol>
+      <symbol id="icon-support" viewBox="0 0 24 24"><path d="M7 7h10l-2.5-2.5M17 17H7l2.5 2.5M19 7l2 2-2 2M5 17l-2-2 2-2" /></symbol>
+      <symbol id="icon-speed" viewBox="0 0 24 24"><path d="M4 17a8 8 0 1 1 16 0M12 17l4-6M7 17h10" /></symbol>
+      <symbol id="icon-accuracy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="m8.5 12 2.2 2.2 4.8-5" /></symbol>
+      <symbol id="icon-productivity" viewBox="0 0 24 24"><path d="M5 19V9M12 19V5M19 19v-7M3 19h18" /></symbol>
+      <symbol id="icon-insight" viewBox="0 0 24 24"><path d="M8.5 16.5h7M9 20h6M8 13c-3.2-3.7-.6-9 4-9s7.2 5.3 4 9c-1 1.1-1.5 1.9-1.5 3h-5c0-1.1-.5-1.9-1.5-3Z" /></symbol>
+      <symbol id="icon-growth" viewBox="0 0 24 24"><path d="m4 18 5-5 3 3 7-9M14 7h5v5" /></symbol>
+    </svg>
+
+    <a class="skip-link" href="#inicio">Pular para a apresentação</a>
+    <header class="topbar" aria-label="Controles da apresentação">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início"><img src="assets/conecta-logo.webp" alt="" width="48" height="48" /><span>ConectaTravel</span></a>
+      <div class="progress-shell" aria-hidden="true"><span id="progressBar"></span></div>
+      <div class="topbar-actions">
+        <span class="slide-counter" aria-live="polite"><b id="currentSlide">01</b><span>/10</span></span>
+        <button class="icon-button" id="fullscreenButton" type="button" aria-label="Ativar tela cheia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5" /></svg></button>
+      </div>
+    </header>
+
+    <nav class="chapter-nav" aria-label="Capítulos da apresentação">
+      <a href="#inicio" aria-label="1. Início"><span>Início</span></a>
+      <a href="#equipe" aria-label="2. Nosso time"><span>Time</span></a>
+      <a href="#contexto" aria-label="3. Por que fazer seguro viagem"><span>Contexto</span></a>
+      <a href="#solucao" aria-label="4. Diferenciais"><span>Diferenciais</span></a>
+      <a href="#funcionalidades" aria-label="5. Funcionalidades"><span>Produto</span></a>
+      <a href="#arquitetura" aria-label="6. Arquitetura"><span>Arquitetura</span></a>
+      <a href="#demonstracao" aria-label="7. Demonstração"><span>Demo</span></a>
+      <a href="#desafios" aria-label="8. Desafios e soluções"><span>Desafios</span></a>
+      <a href="#impacto" aria-label="9. Impacto"><span>Impacto</span></a>
+      <a href="#contato" aria-label="10. Contato"><span>Contato</span></a>
+    </nav>
+
+    <main id="presentation">
+      <section class="slide hero" id="inicio" data-title="Início" aria-labelledby="hero-title">
+        <div class="hero-plane" aria-hidden="true"></div><div class="hero-orb orb-a" aria-hidden="true"></div><div class="hero-orb orb-b" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow reveal">VidaConecta apresenta</p>
+          <img class="hero-logo reveal" src="assets/conecta-logo.webp" alt="ConectaTravel" width="900" height="322" fetchpriority="high" decoding="async" />
+          <h1 id="hero-title" class="sr-only">ConectaTravel</h1>
+          <p class="hero-tagline reveal">Viagens e Seguro Viagens</p>
+          <div class="hero-actions reveal"><a class="button button-primary" href="#" data-project-link="application">Ver aplicação <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="#" data-project-link="github">Ver no GitHub <svg aria-hidden="true"><use href="#icon-github"></use></svg></a></div>
+          <div class="hero-cue reveal" aria-hidden="true"><span>Role para explorar</span><i></i></div>
+        </div>
+        <img class="partner-mark reveal" src="assets/vida-conecta.webp" alt="VidaConecta" width="346" height="231" decoding="async" />
+      </section>
+
+      <section class="slide team-slide" id="equipe" data-title="Nosso time" aria-labelledby="team-title">
+        <div class="slide-inner">
+          <div class="section-heading compact-heading reveal"><span class="chapter-number">02</span><div><p class="eyebrow">As pessoas por trás da solução</p><h2 id="team-title">Nosso Time</h2></div></div>
+          <div class="content-carousel team-carousel reveal" data-carousel="team" role="region" aria-roledescription="carrossel" aria-label="Integrantes da equipe">
+            <div class="team-track" data-carousel-track>
+              <article class="team-profile is-active" data-carousel-item aria-hidden="false"><div class="team-photo"><img src="assets/everly.webp" alt="Everly Rosendo da Silva" loading="lazy" decoding="async" /><span>01 / 06</span></div><div class="team-copy"><p class="eyebrow">Scrum Master</p><h3>Everly Rosendo da Silva</h3><p>Facilita o alinhamento do time e a organização das entregas ao longo do projeto.</p><div class="social-links"><a href="https://linkedin.com/in/everly-rosendo-1066101b9/" target="_blank" rel="noreferrer" aria-label="LinkedIn de Everly"><svg><use href="#icon-linkedin"></use></svg><span>LinkedIn</span></a><a href="https://github.com/Dev-Everly" target="_blank" rel="noreferrer" aria-label="GitHub de Everly"><svg><use href="#icon-github"></use></svg><span>GitHub</span></a></div></div></article>
+              <article class="team-profile" data-carousel-item aria-hidden="true" inert><div class="team-photo"><img src="assets/joel.webp" alt="Joel Ramalho Filho" loading="lazy" decoding="async" /><span>02 / 06</span></div><div class="team-copy"><p class="eyebrow">Desenvolvedor</p><h3>Joel Ramalho Filho</h3><p>Contribui para o desenvolvimento e para a evolução das funcionalidades do sistema.</p><div class="social-links"><a href="https://linkedin.com/in/joel-cunha-ramalho-filho/" target="_blank" rel="noreferrer" aria-label="LinkedIn de Joel"><svg><use href="#icon-linkedin"></use></svg><span>LinkedIn</span></a><a href="https://github.com/JoelRamalhoF" target="_blank" rel="noreferrer" aria-label="GitHub de Joel"><svg><use href="#icon-github"></use></svg><span>GitHub</span></a></div></div></article>
+              <article class="team-profile" data-carousel-item aria-hidden="true" inert><div class="team-photo"><img src="assets/kaue.webp" alt="Kauê Dota" loading="lazy" decoding="async" /><span>03 / 06</span></div><div class="team-copy"><p class="eyebrow">Desenvolvedor</p><h3>Kauê Dota</h3><p>Participa da implementação das regras e da construção da experiência do produto.</p><div class="social-links"><a href="https://linkedin.com/in/kaue-dota/" target="_blank" rel="noreferrer" aria-label="LinkedIn de Kauê"><svg><use href="#icon-linkedin"></use></svg><span>LinkedIn</span></a><a href="https://github.com/kauedota" target="_blank" rel="noreferrer" aria-label="GitHub de Kauê"><svg><use href="#icon-github"></use></svg><span>GitHub</span></a></div></div></article>
+              <article class="team-profile" data-carousel-item aria-hidden="true" inert><div class="team-photo"><img src="assets/sara.webp" alt="Sara Carlenis Hurtado" loading="lazy" decoding="async" /><span>04 / 06</span></div><div class="team-copy"><p class="eyebrow">Desenvolvedora</p><h3>Sara Carlenis Hurtado</h3><p>Colabora na criação das funcionalidades e na integração das partes da aplicação.</p><div class="social-links"><a href="https://linkedin.com/in/sara-hurtado-cortes/" target="_blank" rel="noreferrer" aria-label="LinkedIn de Sara"><svg><use href="#icon-linkedin"></use></svg><span>LinkedIn</span></a><a href="https://github.com/SaraCarlenis" target="_blank" rel="noreferrer" aria-label="GitHub de Sara"><svg><use href="#icon-github"></use></svg><span>GitHub</span></a></div></div></article>
+              <article class="team-profile" data-carousel-item aria-hidden="true" inert><div class="team-photo"><img src="assets/victor.webp" alt="Victor Pedro Gaspar M. Silva" loading="lazy" decoding="async" /><span>05 / 06</span></div><div class="team-copy"><p class="eyebrow">Desenvolvedor e tester</p><h3>Victor Pedro Gaspar M. Silva</h3><p>Atua no desenvolvimento e na validação das entregas, apoiando a qualidade do sistema.</p><div class="social-links"><a href="https://www.linkedin.com/in/victor-pgms/" target="_blank" rel="noreferrer" aria-label="LinkedIn de Victor"><svg><use href="#icon-linkedin"></use></svg><span>LinkedIn</span></a><a href="https://github.com/victorpgms" target="_blank" rel="noreferrer" aria-label="GitHub de Victor"><svg><use href="#icon-github"></use></svg><span>GitHub</span></a></div></div></article>
+              <article class="team-profile" data-carousel-item aria-hidden="true" inert><div class="team-photo"><img src="assets/vitoria.webp" alt="Vitória Albuquerque" loading="lazy" decoding="async" /><span>06 / 06</span></div><div class="team-copy"><p class="eyebrow">Desenvolvedora</p><h3>Vitória Albuquerque</h3><p>Contribui para a construção e o refinamento das soluções entregues pelo time.</p><div class="social-links"><a href="https://linkedin.com/in/vit%C3%B3ria-albuqueerque/" target="_blank" rel="noreferrer" aria-label="LinkedIn de Vitória"><svg><use href="#icon-linkedin"></use></svg><span>LinkedIn</span></a><a href="https://github.com/vitoriaalbuquerqueee" target="_blank" rel="noreferrer" aria-label="GitHub de Vitória"><svg><use href="#icon-github"></use></svg><span>GitHub</span></a></div></div></article>
+            </div>
+            <div class="carousel-controls"><button type="button" data-carousel-prev aria-label="Integrante anterior"><svg><use href="#icon-arrow-left"></use></svg></button><div class="carousel-dots" data-carousel-dots role="group" aria-label="Selecionar integrante"></div><span class="carousel-status" data-carousel-status aria-live="polite">1 / 6</span><button type="button" data-carousel-next aria-label="Próximo integrante"><svg><use href="#icon-arrow-right"></use></svg></button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide context-slide" id="contexto" data-title="Por que fazer" aria-labelledby="context-title">
+        <div class="slide-inner context-layout">
+          <div class="context-copy"><div class="section-heading reveal"><span class="chapter-number">03</span><div><p class="eyebrow">Risco real, impacto direto</p><h2 id="context-title">Por que fazer<br /><span>seguro viagem?</span></h2></div></div><div class="stat-block reveal"><strong><span data-count="33.4">33,4</span> milhões</strong><p>de bagagens atrasadas, danificadas ou extraviadas no mundo, em 2024.</p><small>Fonte: SITA, Baggage IT Insights 2025.</small></div><p class="risk-line reveal">Além de imprevistos como <b>atrasos</b>, <b>cancelamentos</b> e <b>emergências médicas</b>.</p></div>
+          <div class="context-visual reveal"><figure class="image-frame airport-frame"><img src="assets/airport-640.webp" srcset="assets/airport-640.webp 640w, assets/airport-1280.webp 1280w" sizes="(max-width: 850px) 92vw, 54vw" alt="Terminal de aeroporto com passageiros e bagagens" loading="lazy" decoding="async" /></figure><figure class="image-frame departures-frame"><img src="assets/departures-480.webp" srcset="assets/departures-480.webp 480w, assets/departures-960.webp 960w" sizes="(max-width: 850px) 52vw, 25vw" alt="Viajante observando o painel de partidas" loading="lazy" decoding="async" /></figure><div class="floating-label">bagagens • atrasos • assistência</div></div>
+        </div>
+      </section>
+
+      <section class="slide solution-slide" id="solucao" data-title="Diferenciais" aria-labelledby="solution-title">
+        <div class="slide-inner solution-layout">
+          <div class="traveler-visual reveal"><div class="visual-halo" aria-hidden="true"></div><img src="assets/traveler-640.webp" srcset="assets/traveler-640.webp 640w, assets/traveler-1000.webp 1000w" sizes="(max-width: 850px) 84vw, 40vw" alt="Viajante com mala diante de um aeroporto" loading="lazy" decoding="async" /></div>
+          <div class="solution-copy"><div class="section-heading reveal"><span class="chapter-number">04</span><div><p class="eyebrow">Por que escolher a solução</p><h2 id="solution-title">Diferenciais do <span>ConectaTravel</span></h2></div></div>
+            <div class="benefit-grid">
+              <article class="benefit reveal" data-dialog-body="A experiência acompanha o viajante durante toda a jornada, com acesso a salas VIP e parcerias para conexão aérea."><span class="benefit-icon" aria-hidden="true"><svg><use href="#icon-clock"></use></svg></span><h3>Conexão all-time</h3><p>Acesso a salas VIP e parcerias com internet aérea.</p><button class="card-popup" type="button" aria-label="Expandir Conexão all-time" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+              <article class="benefit reveal" data-dialog-body="Coberturas pensadas para proteger malas e equipamentos tecnológicos durante a viagem."><span class="benefit-icon" aria-hidden="true"><svg><use href="#icon-shield"></use></svg></span><h3>Proteção</h3><p>Malas e equipamentos tecnológicos.</p><button class="card-popup" type="button" aria-label="Expandir Proteção" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+              <article class="benefit reveal" data-dialog-body="Atendimento em português para telemedicina, assistência jurídica e suporte pelo WhatsApp, 24 horas por dia."><span class="benefit-icon" aria-hidden="true"><svg><use href="#icon-chat"></use></svg></span><h3>Língua nativa</h3><p>Telemedicina, assistência jurídica e WhatsApp 24 horas em português.</p><button class="card-popup" type="button" aria-label="Expandir Língua nativa" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+              <article class="benefit reveal" data-dialog-body="O atendimento conecta o cliente diretamente à assistência para evitar desembolsos inesperados."><span class="benefit-icon" aria-hidden="true"><svg><use href="#icon-support"></use></svg></span><h3>Assistência direta</h3><p>Evita que o cliente desembolse o próprio dinheiro.</p><button class="card-popup" type="button" aria-label="Expandir Assistência direta" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide features-slide" id="funcionalidades" data-title="Funcionalidades" aria-labelledby="features-title">
+        <div class="slide-inner features-layout">
+          <div class="feature-visual reveal"><img src="assets/feature-laptop-640.webp" srcset="assets/feature-laptop-640.webp 640w, assets/feature-laptop-1100.webp 1100w" sizes="(max-width: 850px) 0px, 48vw" alt="Notebook representando o sistema ConectaTravel" loading="lazy" decoding="async" /></div>
+          <div class="feature-copy"><div class="section-heading reveal"><span class="chapter-number">05</span><div><p class="eyebrow">Do cadastro ao cálculo</p><h2 id="features-title">Funcionalidades do <span>sistema</span></h2></div></div><p class="feature-lead reveal">Gerenciamento completo e aplicação das regras de negócio.</p><div class="entity-row reveal" role="group" aria-label="Entidades do sistema"><span>Cliente</span><i></i><span>Apólice</span><i></i><span>Usuário</span></div><div class="feature-columns"><article class="reveal"><h3>Funções</h3><ul class="check-list"><li>Cadastra</li><li>Atualiza</li><li>Consulta por ID ou atributo</li><li>Deleta</li></ul></article><article class="reveal"><h3>Cálculo automatizado</h3><ul class="check-list"><li>Coberturas</li><li>Destinos</li><li>Idade</li><li>Profissionais tech</li></ul></article></div></div>
+        </div>
+      </section>
+
+      <section class="slide architecture-slide" id="arquitetura" data-title="Arquitetura" aria-labelledby="architecture-title">
+        <div class="slide-inner">
+          <div class="section-heading compact-heading reveal"><span class="chapter-number">06</span><div><p class="eyebrow">Da interface à persistência</p><h2 id="architecture-title">Arquitetura do sistema</h2></div></div>
+          <div class="content-carousel architecture-carousel reveal" data-carousel="architecture" role="region" aria-roledescription="carrossel" aria-label="Camadas da arquitetura">
+            <div class="architecture-track" data-carousel-track>
+              <article class="architecture-panel is-active" data-carousel-item aria-hidden="false">
+                <div class="architecture-intro"><p class="architecture-step">01 — Back-end</p><h3>Regras, API e execução</h3><p>Camada responsável pela lógica de negócio, pelo acesso aos dados e pelo processamento das requisições.</p></div>
+                <div class="technology-grid">
+                  <article class="technology-card" data-dialog-body="Linguagem principal do back-end, usada para implementar a lógica e as regras de negócio."><img src="assets/java-tech.webp" alt="Java" loading="lazy" decoding="async" /><h3>Java</h3><p>Lógica do sistema.</p><button class="card-popup" type="button" aria-label="Detalhes sobre Java" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+                  <article class="technology-card" data-dialog-body="Framework que organiza a aplicação, injeta dependências e simplifica a criação da API."><img src="assets/spring-tech.webp" alt="Spring" loading="lazy" decoding="async" /><h3>Spring</h3><p>Estrutura da API.</p><button class="card-popup" type="button" aria-label="Detalhes sobre Spring" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+                  <article class="technology-card" data-dialog-body="A JPA define o padrão usado para mapear objetos Java em dados relacionais."><span class="tech-monogram" aria-hidden="true">JPA</span><h3>JPA</h3><p>Mapeamento de dados.</p><button class="card-popup" type="button" aria-label="Detalhes sobre JPA" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+                  <article class="technology-card" data-dialog-body="Implementação da persistência que traduz as entidades da aplicação para o banco de dados."><img src="assets/hibernate-tech.webp" alt="Hibernate" loading="lazy" decoding="async" /><h3>Hibernate</h3><p>Persistência ORM.</p><button class="card-popup" type="button" aria-label="Detalhes sobre Hibernate" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+                  <article class="technology-card" data-dialog-body="Contêiner responsável por executar a aplicação Java e atender às requisições web."><img src="assets/tomcat-tech.webp" alt="Apache Tomcat" loading="lazy" decoding="async" /><h3>Tomcat</h3><p>Execução da aplicação.</p><button class="card-popup" type="button" aria-label="Detalhes sobre Tomcat" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+                  <article class="technology-card" data-dialog-body="Plataforma de hospedagem usada para disponibilizar o serviço da aplicação."><img src="assets/render-tech.webp" alt="Render" loading="lazy" decoding="async" /><h3>Render</h3><p>Deploy do serviço.</p><button class="card-popup" type="button" aria-label="Detalhes sobre Render" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+                </div>
+              </article>
+              <article class="architecture-panel database-panel" data-carousel-item aria-hidden="true" inert>
+                <div class="architecture-intro"><p class="architecture-step">02 — Banco de dados</p><h3>Modelo relacional</h3><p>Os registros são organizados em entidades relacionadas e consultados pela API conforme as operações do sistema.</p><div class="database-tech"><img src="assets/mysql-tech.webp" alt="MySQL" loading="lazy" decoding="async" /><span><b>MySQL</b>Armazenamento e consultas relacionais.</span></div></div>
+                <button class="diagram-card lightbox-trigger" type="button" aria-label="Ampliar diagrama das entidades" aria-haspopup="dialog"><img src="assets/architecture-640.webp" srcset="assets/architecture-640.webp 640w, assets/architecture-1200.webp 1200w" sizes="(max-width: 850px) 92vw, 48vw" alt="Diagrama das entidades Cliente, Apólice e Usuário" loading="lazy" decoding="async" /><span><svg><use href="#icon-expand"></use></svg> Ampliar</span></button>
+                <div class="entity-model" role="group" aria-label="Resumo do modelo de dados"><article><b>Cliente</b><span>id, nome, nascimento, documento, e-mail, empresa tech</span></article><i>1 → N</i><article><b>Apólice</b><span>número, período, destino, seguradora, coberturas</span></article><i>N ← 1</i><article><b>Usuário</b><span>id, nome, e-mail, perfil e autenticação</span></article></div>
+              </article>
+              <article class="architecture-panel" data-carousel-item aria-hidden="true" inert>
+                <div class="architecture-intro"><p class="architecture-step">03 — Front-end</p><h3>Interface e experiência</h3><p>Camada visual responsável pela navegação, pelos componentes da tela e pela comunicação com a API.</p></div>
+                <div class="technology-grid frontend-grid">
+                  <article class="technology-card" data-dialog-body="Adiciona tipagem ao JavaScript e ajuda a prevenir erros durante o desenvolvimento."><img src="assets/typescript-tech.webp" alt="TypeScript" loading="lazy" decoding="async" /><h3>TypeScript</h3><p>Código tipado.</p><button class="card-popup" type="button" aria-label="Detalhes sobre TypeScript" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+                  <article class="technology-card" data-dialog-body="Biblioteca usada para construir a interface por meio de componentes reutilizáveis."><img src="assets/react.svg" alt="React" loading="lazy" decoding="async" /><h3>React</h3><p>Componentes da interface.</p><button class="card-popup" type="button" aria-label="Detalhes sobre React" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+                  <article class="technology-card" data-dialog-body="Ferramenta de desenvolvimento e build que entrega os arquivos estáticos otimizados."><img src="assets/vite-tech.webp" alt="Vite" loading="lazy" decoding="async" /><h3>Vite</h3><p>Desenvolvimento e build.</p><button class="card-popup" type="button" aria-label="Detalhes sobre Vite" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+                  <article class="technology-card" data-dialog-body="Framework utilitário de CSS usado para compor estilos e layouts responsivos."><img src="assets/tailwind-tech.webp" alt="Tailwind CSS" loading="lazy" decoding="async" /><h3>Tailwind CSS</h3><p>Estilos responsivos.</p><button class="card-popup" type="button" aria-label="Detalhes sobre Tailwind CSS" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+                  <article class="technology-card" data-dialog-body="Ambiente usado no processo de desenvolvimento, gerenciamento de pacotes e automação do build."><img src="assets/nodejs-tech.webp" alt="Node.js" loading="lazy" decoding="async" /><h3>Node.js</h3><p>Ambiente de desenvolvimento.</p><button class="card-popup" type="button" aria-label="Detalhes sobre Node.js" aria-haspopup="dialog"><svg><use href="#icon-expand"></use></svg></button></article>
+                </div>
+              </article>
+            </div>
+            <div class="carousel-controls architecture-controls"><button type="button" data-carousel-prev aria-label="Camada anterior"><svg><use href="#icon-arrow-left"></use></svg></button><div class="carousel-dots" data-carousel-dots role="group" aria-label="Selecionar camada"></div><span class="carousel-status" data-carousel-status aria-live="polite">1 / 3</span><button type="button" data-carousel-next aria-label="Próxima camada"><svg><use href="#icon-arrow-right"></use></svg></button></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide demo-slide" id="demonstracao" data-title="Demonstração" aria-labelledby="demo-title">
+        <div class="slide-inner demo-layout">
+          <div class="demo-heading"><span class="chapter-number reveal">07</span><p class="eyebrow reveal">É hora de ver funcionando</p><h2 id="demo-title" class="reveal">Demonstração<br />Prática</h2><p class="demo-copy reveal">Explore a aplicação e amplie as imagens para acompanhar os detalhes do desenvolvimento.</p><a class="button button-primary reveal" href="#" data-project-link="application">Acessar aplicação <span aria-hidden="true">↗</span></a></div>
+          <div class="demo-gallery"><figure class="demo-main reveal"><button class="lightbox-trigger" type="button" aria-label="Ampliar imagem da equipe" aria-haspopup="dialog"><img src="assets/demo-team-640.webp" srcset="assets/demo-team-640.webp 640w, assets/demo-team-1200.webp 1200w" sizes="(max-width: 850px) 88vw, 49vw" alt="Equipe de desenvolvimento trabalhando em conjunto" loading="lazy" decoding="async" /><span><svg><use href="#icon-expand"></use></svg> Ampliar</span></button></figure><figure class="demo-secondary reveal"><button class="lightbox-trigger" type="button" aria-label="Ampliar imagem de desenvolvimento" aria-haspopup="dialog"><img src="assets/demo-code-640.webp" srcset="assets/demo-code-640.webp 640w, assets/demo-code-1280.webp 1280w" sizes="(max-width: 850px) 62vw, 28vw" alt="Desenvolvimento de software em notebooks" loading="lazy" decoding="async" /><span><svg><use href="#icon-expand"></use></svg> Ampliar</span></button></figure><div class="demo-note reveal" aria-hidden="true"><span>API</span><span>CRUD</span><span>REGRAS</span></div></div>
+        </div>
+      </section>
+
+      <section class="slide challenges-slide" id="desafios" data-title="Desafios" aria-labelledby="challenges-title">
+        <div class="slide-inner"><div class="section-heading reveal"><span class="chapter-number">08</span><div><p class="eyebrow">Aprendizados do projeto</p><h2 id="challenges-title">Desafios <span>e soluções</span></h2></div></div>
+          <div class="challenge-grid">
+            <article class="challenge reveal"><span class="challenge-index">01</span><div class="challenge-symbol code-symbol" aria-hidden="true">&lt;/&gt;</div><h3>Organização do código</h3><ul><li>Versionamento do código pelo GitHub;</li><li>Utilização de packages e branches.</li></ul><div class="tool-row"><span>Git</span><span>GitHub</span><span>Eclipse</span></div></article>
+            <article class="challenge reveal"><span class="challenge-index">02</span><div class="challenge-symbol task-symbol" aria-hidden="true">✓</div><h3>Gestão de tarefas</h3><ul><li>Responsabilidades dos integrantes;</li><li>Reuniões de alinhamento;</li><li>Jira — ferramenta Kanban.</li></ul><div class="tool-row"><span>Teams</span><span>Jira</span></div></article>
+            <article class="challenge reveal"><span class="challenge-index">03</span><div class="challenge-symbol help-symbol" aria-hidden="true">?</div><h3>Problemas técnicos</h3><ul><li>Utilização de materiais técnicos, cookbook e documentação.</li></ul><div class="tool-row"><span>Oracle</span><span>Docs</span></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide impact-slide" id="impacto" data-title="Impacto" aria-labelledby="impact-title">
+        <div class="slide-inner impact-layout">
+          <div class="impact-title-block"><span class="chapter-number reveal">09</span><p class="eyebrow reveal">Resultados para a operação</p><h2 id="impact-title" class="reveal">Impacto do<br /><span>ConectaTravel</span></h2><img class="reveal" src="assets/travel-couple.webp" alt="Casal de viajantes com malas" loading="lazy" decoding="async" /></div>
+          <div class="impact-grid"><article class="impact-card reveal"><span><svg><use href="#icon-speed"></use></svg></span><p><b>Respostas rápidas</b>Processos mais organizados.</p></article><article class="impact-card reveal"><span><svg><use href="#icon-accuracy"></use></svg></span><p><b>Menos erros</b>Cálculos e validações automáticos.</p></article><article class="impact-card reveal"><span><svg><use href="#icon-productivity"></use></svg></span><p><b>Mais produtividade</b>Menos tarefas repetitivas.</p></article><article class="impact-card reveal"><span><svg><use href="#icon-insight"></use></svg></span><p><b>Decisões melhores</b>Informações centralizadas.</p></article><article class="impact-card impact-wide reveal"><span><svg><use href="#icon-growth"></use></svg></span><p><b>Potencial de crescimento</b>Mais clientes com organização e controle.</p></article></div>
+        </div>
+      </section>
+
+      <section class="slide closing-slide" id="contato" data-title="Contato" aria-label="Contato e encerramento">
+        <div class="hero-plane closing-plane" aria-hidden="true"></div>
+        <div class="closing-content"><img class="closing-logo reveal" src="assets/conecta-logo.webp" alt="ConectaTravel" loading="lazy" decoding="async" /><h2 id="closing-title" class="sr-only">ConectaTravel</h2><p class="closing-tagline reveal">Viagens e Seguro Viagens</p>
+          <div class="qr-grid"><article class="qr-card reveal"><p>Repositório do projeto</p><img src="assets/qr-project.webp" alt="QR code para o repositório do projeto" loading="lazy" decoding="async" /><a href="#" data-project-link="github">Abrir no GitHub <span aria-hidden="true">↗</span></a></article><article class="qr-card reveal"><p>Entre em contato</p><img src="assets/qr-contact.webp" alt="QR code para contato" loading="lazy" decoding="async" /><a href="https://www.linkedin.com/in/victor-pgms/" target="_blank" rel="noreferrer">Abrir contato <span aria-hidden="true">↗</span></a></article></div>
+          <button class="restart-button reveal" type="button" id="restartButton">Rever apresentação <span aria-hidden="true">↑</span></button>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="depth-dialog" id="depthDialog" aria-labelledby="dialogTitle">
+      <div class="dialog-surface">
+        <button class="dialog-close" id="dialogClose" type="button" aria-label="Fechar janela"><svg><use href="#icon-close"></use></svg></button>
+        <div class="dialog-visual"><div class="dialog-glow" aria-hidden="true"></div><img id="dialogImage" src="assets/conecta-logo.webp" alt="" hidden /><span id="dialogGlyph" aria-hidden="true"></span></div>
+        <div class="dialog-copy"><p class="eyebrow" id="dialogKicker">ConectaTravel</p><h2 id="dialogTitle">Detalhes</h2><p id="dialogBody"></p></div>
+      </div>
+    </dialog>
+    <div class="slide-controls" role="navigation" aria-label="Navegação entre capítulos"><button id="previousButton" type="button" aria-label="Capítulo anterior"><svg><use href="#icon-arrow-left"></use></svg><span>Anterior</span></button><div class="mobile-slide-status" aria-live="polite"><span id="mobileTitle">Início</span><b id="mobileSlide">01 / 10</b></div><button id="nextButton" type="button" aria-label="Próximo capítulo"><span>Próximo</span><svg><use href="#icon-arrow-right"></use></svg></button></div>
+    <div class="site-toast" id="siteToast" role="status" aria-live="polite"></div>
+    <noscript><p class="noscript-message">Ative o JavaScript para usar a navegação animada. Todo o conteúdo continua disponível por rolagem.</p></noscript>
+    <script src="script.js" defer></script>
+  </body>
+</html>
